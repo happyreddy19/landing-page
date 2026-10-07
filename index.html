@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PitchArena | Premium Cricket Grounds & Box Turf Rentals</title>
+  <meta name="description" content="Book international-standard natural turf cricket grounds, 24/7 floodlight box cricket arenas, and high-speed practice nets. Instant online slot booking, live scoring, and corporate tournament packages.">
+  <meta name="keywords" content="cricket ground rental, box cricket turf booking, rent cricket pitch, turf cricket grounds, night cricket floodlights, corporate cricket tournament">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏏</text></svg>">
+
+  <!-- Font Awesome Icons for high quality sports icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <span class="badge-pulse">HOT SLOTS</span>
+    <span>Weekend Night Floodlight Slots Open! Book today &amp; get 1 Free Match Ball Box.</span>
+    <a href="#calculator" style="text-decoration: underline; font-weight: 700; color: #fff;">Check Rates →</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="siteLogo">
+        <div class="logo-icon">🏏</div>
+        <div class="logo-text">Pitch<span>Arena</span></div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#grounds">Our Grounds</a></li>
+        <li><a href="#calculator">Slot Calculator</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#tournaments">Tournaments</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" id="navBookBtn" onclick="openBookingModal()">
+          <i class="fa-solid fa-calendar-check"></i> Book a Slot
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="section-tag">
+          <i class="fa-solid fa-bolt"></i> Premier Cricket Grounds On Rent
+        </div>
+        <h1 class="hero-headline">
+          Play On World-Class <br>
+          <span class="gradient-text">Cricket Turfs &amp; Grounds</span>
+        </h1>
+        <p class="hero-lead">
+          From 11-a-side full red-soil match turf pitches to fast-paced 24/7 floodlight box cricket arenas. Lock your slot online with instant confirmation, live video broadcast, and official umpires.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="openBookingModal()">
+            <i class="fa-solid fa-bolt"></i> Instant Slot Booking
+          </button>
+          <a href="#grounds" class="btn btn-outline">
+            <i class="fa-solid fa-eye"></i> Explore Grounds &amp; Specs
+          </a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-avatars">
+            <div class="proof-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="proof-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+            <div class="proof-avatar"><i class="fa-solid fa-medal"></i></div>
+            <div class="proof-avatar">+5k</div>
+          </div>
+          <div class="proof-text">
+            <strong>Rated 4.9/5 by 1,450+ Teams</strong>
+            Corporate leagues, weekend clubs &amp; youth academies
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="hero-visual-card">
+        <div class="hero-image-wrapper">
+          <img src="assets/images/cricket_ground_hero.jpg" alt="Panoramic Cricket Stadium Ground under floodlights" id="heroImage">
+          <div class="hero-overlay-tag">
+            <span class="live-dot"></span> 500+ Lux Night Lighting Ready
+          </div>
+          <div class="hero-stat-floating">
+            <div class="stat-icon-wrap">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="stat-meta">
+              <div class="stat-val">ICC Standard</div>
+              <div class="stat-lbl">Natural Grass &amp; Turf Pitch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Finder / Instant Search Strip -->
+  <div class="container quick-finder-wrap">
+    <div class="quick-finder-card">
+      <form class="finder-form" id="quickFinderForm" onsubmit="handleQuickFind(event)">
+        <div class="finder-field">
+          <label for="findGround"><i class="fa-solid fa-map-pin"></i> Ground Category</label>
+          <select id="findGround">
+            <option value="all">All Arenas</option>
+            <option value="full">Full 11v11 Turf Stadium</option>
+            <option value="box">Box Cricket / AstroTurf</option>
+            <option value="nets">Bowling Machine Practice Nets</option>
+          </select>
+        </div>
+
+        <div class="finder-field">
+          <label for="findDate"><i class="fa-regular fa-calendar"></i> Match Date</label>
+          <input type="date" id="findDate" required>
+        </div>
+
+        <div class="finder-field">
+          <label for="findSlot"><i class="fa-regular fa-clock"></i> Preferred Slot</label>
+          <select id="findSlot">
+            <option value="morning">Morning (06:00 AM - 10:00 AM)</option>
+            <option value="afternoon">Afternoon (10:00 AM - 02:00 PM)</option>
+            <option value="evening">Evening (02:00 PM - 06:00 PM)</option>
+            <option value="night">Night Floodlight (06:00 PM - 10:00 PM)</option>
+            <option value="latenight">Midnight Blast (10:00 PM - 02:00 AM)</option>
+          </select>
+        </div>
+
+        <div class="finder-field">
+          <label for="findMatchFormat"><i class="fa-solid fa-baseball-bat-ball"></i> Format</label>
+          <select id="findMatchFormat">
+            <option value="t20">T20 Leather Ball Match (4h)</option>
+            <option value="box8">Box Cricket 8-a-side (2h)</option>
+            <option value="nets2">Nets Session (1h - 2h)</option>
+            <option value="tournament">Full Day Tournament (8h)</option>
+          </select>
+        </div>
+
+        <div class="finder-btn-wrap">
+          <button type="submit" class="btn btn-primary" style="width: 100%; height: 46px;">
+            <i class="fa-solid fa-magnifying-glass"></i> Check Rates
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Trust Metrics / Stats Counter -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-item-box">
+        <div class="stat-number">12<span>+</span></div>
+        <div class="stat-label">Pitches &amp; Turf Arenas</div>
+      </div>
+      <div class="stat-item-box">
+        <div class="stat-number">1,450<span>+</span></div>
+        <div class="stat-label">Matches Hosted This Year</div>
+      </div>
+      <div class="stat-item-box">
+        <div class="stat-number">100<span>%</span></div>
+        <div class="stat-label">Confirmed Slot Guarantee</div>
+      </div>
+      <div class="stat-item-box">
+        <div class="stat-number">4.9<span>★</span></div>
+        <div class="stat-label">Top Rated Sports Venue</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Grounds & Arenas (Filterable Grid) -->
+  <section class="grounds-section" id="grounds">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-shield-halved"></i> Our Rental Venues</div>
+        <h2 class="section-title">Explore Our <span>Cricket Grounds</span></h2>
+        <p class="section-desc center-box">
+          Choose from manicured 11-a-side cricket stadiums, shock-absorbent artificial box turfs, or automated batting training cages.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all" onclick="filterGrounds('all', this)">All Venues</button>
+        <button class="filter-btn" data-filter="full" onclick="filterGrounds('full', this)">11v11 Match Stadiums</button>
+        <button class="filter-btn" data-filter="box" onclick="filterGrounds('box', this)">Box Cricket Turfs</button>
+        <button class="filter-btn" data-filter="nets" onclick="filterGrounds('nets', this)">Practice Nets &amp; Machines</button>
+      </div>
+
+      <!-- Grounds Cards -->
+      <div class="grounds-grid" id="groundsGrid">
+
+        <!-- Ground 1: Full 11v11 Red Soil -->
+        <div class="ground-card" data-category="full">
+          <div class="ground-img-box">
+            <img src="assets/images/cricket_ground_hero.jpg" alt="The Oval Stadium Ground">
+            <span class="ground-badge">11-A-Side Full Ground</span>
+            <div class="ground-price-tag">₹4,500 <span>/ hour</span></div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">The Oval Championship Stadium</h3>
+            <div class="ground-location"><i class="fa-solid fa-location-dot"></i> South Complex, Arena One</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> 68m Boundary Radius</div>
+              <div class="spec-item"><i class="fa-solid fa-earth-americas"></i> Red Soil Match Pitch</div>
+              <div class="spec-item"><i class="fa-solid fa-lightbulb"></i> 600 Lux Floodlights</div>
+              <div class="spec-item"><i class="fa-solid fa-couch"></i> 2 AC Dressing Pavilions</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Digital Scoreboard</span>
+              <span class="feature-pill">Leather Ball Compatible</span>
+              <span class="feature-pill">Live Stream Ready</span>
+              <span class="feature-pill">Sight Screens</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-outline btn-sm" onclick="showGroundDetails('the-oval')">Specs &amp; Details</button>
+              <button class="btn btn-primary btn-sm" onclick="prefillBooking('The Oval Championship Stadium', 4500, 'full')">Book Ground</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ground 2: Box Cricket Turf -->
+        <div class="ground-card" data-category="box">
+          <div class="ground-img-box">
+            <img src="assets/images/box_cricket_turf.jpg" alt="ThunderBox Turf Arena">
+            <span class="ground-badge">Box Cricket / AstroTurf</span>
+            <div class="ground-price-tag">₹1,400 <span>/ hour</span></div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">ThunderBox 24/7 Turf Arena</h3>
+            <div class="ground-location"><i class="fa-solid fa-location-dot"></i> Central Hub, Bay 3</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-vector-square"></i> 110ft x 65ft Turf Arena</div>
+              <div class="spec-item"><i class="fa-solid fa-seedling"></i> 40mm FIFA Turf Grass</div>
+              <div class="spec-item"><i class="fa-solid fa-lightbulb"></i> Overhead LED Lights</div>
+              <div class="spec-item"><i class="fa-solid fa-shield-virus"></i> High Enclosure Netting</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Tennis Ball Match</span>
+              <span class="feature-pill">Music System</span>
+              <span class="feature-pill">Dugout Seating</span>
+              <span class="feature-pill">Open 24 Hours</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-outline btn-sm" onclick="showGroundDetails('thunderbox')">Specs &amp; Details</button>
+              <button class="btn btn-primary btn-sm" onclick="prefillBooking('ThunderBox 24/7 Turf Arena', 1400, 'box')">Book Turf</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ground 3: Batting Nets & Robo Machine -->
+        <div class="ground-card" data-category="nets">
+          <div class="ground-img-box">
+            <img src="assets/images/cricket_practice_nets.jpg" alt="SpeedPro Batting Practice Nets">
+            <span class="ground-badge">Practice Nets &amp; Bowling Machine</span>
+            <div class="ground-price-tag">₹800 <span>/ hour</span></div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">SpeedPro Batting Nets &amp; RoboArm</h3>
+            <div class="ground-location"><i class="fa-solid fa-location-dot"></i> North Academy Wing</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Speed up to 145 km/h</div>
+              <div class="spec-item"><i class="fa-solid fa-robot"></i> Bola Digital Bowling Machine</div>
+              <div class="spec-item"><i class="fa-solid fa-video"></i> Action Replay Camera</div>
+              <div class="spec-item"><i class="fa-solid fa-layer-group"></i> 3 Synthetic Turf Lanes</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Swing &amp; Spin Control</span>
+              <span class="feature-pill">Leather / Dimple Balls</span>
+              <span class="feature-pill">Gear Kit Available</span>
+              <span class="feature-pill">Coach Assistance</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-outline btn-sm" onclick="showGroundDetails('speedpro')">Specs &amp; Details</button>
+              <button class="btn btn-primary btn-sm" onclick="prefillBooking('SpeedPro Batting Nets & RoboArm', 800, 'nets')">Book Net Session</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ground 4: Lord's Black Soil Match Stadium -->
+        <div class="ground-card" data-category="full">
+          <div class="ground-img-box">
+            <img src="assets/images/cricket_ground_hero.jpg" alt="Lords Meadow Black Soil Ground">
+            <span class="ground-badge">11-A-Side Tournament Ground</span>
+            <div class="ground-price-tag">₹5,000 <span>/ hour</span></div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">Lord's Meadow Match Stadium</h3>
+            <div class="ground-location"><i class="fa-solid fa-location-dot"></i> West Wing, Arena Two</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> 72m Pro Boundary Radius</div>
+              <div class="spec-item"><i class="fa-solid fa-earth-americas"></i> Black Soil Bouncy Pitch</div>
+              <div class="spec-item"><i class="fa-solid fa-lightbulb"></i> 650 Lux High-Mast Lights</div>
+              <div class="spec-item"><i class="fa-solid fa-tv"></i> CricHeroes Live Sync Hub</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Corporate Cup Ready</span>
+              <span class="feature-pill">Trophy Presentation Area</span>
+              <span class="feature-pill">Third Umpire Screen</span>
+              <span class="feature-pill">Lush Bermudagrass Outfield</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-outline btn-sm" onclick="showGroundDetails('lords-meadow')">Specs &amp; Details</button>
+              <button class="btn btn-primary btn-sm" onclick="prefillBooking('Lord\'s Meadow Match Stadium', 5000, 'full')">Book Ground</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Live Slot & Price Calculator -->
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-calculator"></i> Real-time Quote Estimator</div>
+        <h2 class="section-title">Calculate Your <span>Match Rental Price</span></h2>
+        <p class="section-desc center-box">
+          Select your ground, slot duration, and match-day add-ons. Get transparent upfront pricing with zero hidden surcharges.
+        </p>
+      </div>
+
+      <div class="calc-card">
+        <div class="calc-grid">
+          <!-- Left Options Configurator -->
+          <div class="calc-inputs">
+            
+            <!-- Ground Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-stadium"></i> 1. Choose Ground / Arena</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="oval" data-rate="4500" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">The Oval Stadium</span>
+                  <span class="price-hint">₹4,500 / hr</span>
+                  <span class="desc">Full 11v11 Red Soil Turf</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="thunderbox" data-rate="1400" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">ThunderBox Turf</span>
+                  <span class="price-hint">₹1,400 / hr</span>
+                  <span class="desc">Enclosed Box Turf</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="speedpro" data-rate="800" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">SpeedPro Nets</span>
+                  <span class="price-hint">₹800 / hr</span>
+                  <span class="desc">Robo Bowling Machine</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="lords" data-rate="5000" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Lord's Meadow</span>
+                  <span class="price-hint">₹5,000 / hr</span>
+                  <span class="desc">Black Soil Tournament Turf</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Duration Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-stopwatch"></i> 2. Match Duration</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="2" data-hours="2" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">2 Hours</span>
+                  <span class="desc">Box match or net training</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="4" data-hours="4" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">4 Hours (T20)</span>
+                  <span class="desc">Full standard 20-over game</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="8" data-hours="8" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">8 Hours (Full Day)</span>
+                  <span class="desc">Tournament or Corporate League</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Time Slot & Floodlight Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-cloud-sun"></i> 3. Time Window</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcTime" value="day" data-multiplier="1.0" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Morning / Daytime</span>
+                  <span class="desc">06:00 AM - 05:00 PM (Standard)</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcTime" value="night" data-multiplier="1.15" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Night Floodlights (+15%)</span>
+                  <span class="desc">06:00 PM onwards (High-Lux Lights)</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Add-ons Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-plus-circle"></i> 4. Match-Day Add-ons (Optional)</div>
+            <div class="addons-list">
+              
+              <div class="addon-card" id="addon-umpires" onclick="toggleAddon('umpires', 1500)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">2 Certified Umpires + Scorer</div>
+                    <div class="desc">Official match officiating &amp; CricHeroes</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹1,500</div>
+              </div>
+
+              <div class="addon-card" id="addon-stream" onclick="toggleAddon('stream', 2800)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">4K Multi-Cam YouTube Stream</div>
+                    <div class="desc">Live broadcast with graphics &amp; score bar</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹2,800</div>
+              </div>
+
+              <div class="addon-card" id="addon-balls" onclick="toggleAddon('balls', 950)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">Match Ball Box (2 Kookaburra)</div>
+                    <div class="desc">Four-piece red or white leather balls</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹950</div>
+              </div>
+
+              <div class="addon-card" id="addon-refreshments" onclick="toggleAddon('refreshments', 800)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">Hydration Station &amp; Energy Drinks</div>
+                    <div class="desc">Electrolytes, chilled water &amp; fruits for 22 players</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹800</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Real-time Calculation Summary -->
+          <div class="calc-summary-wrapper">
+            <div class="calc-receipt">
+              <div class="receipt-title">
+                <span><i class="fa-solid fa-receipt"></i> Rental Breakdown</span>
+                <span class="badge-pulse" style="font-size: 0.72rem;">LIVE QUOTE</span>
+              </div>
+
+              <div class="receipt-rows">
+                <div class="receipt-row">
+                  <span>Selected Ground:</span>
+                  <span class="val" id="summaryGround">The Oval Championship</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Base Rate:</span>
+                  <span class="val" id="summaryRate">₹4,500 / hr</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Duration:</span>
+                  <span class="val" id="summaryDuration">2 Hours</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Lighting / Session:</span>
+                  <span class="val" id="summaryLighting">Daytime Regular</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Add-ons Total:</span>
+                  <span class="val" id="summaryAddons">₹0</span>
+                </div>
+              </div>
+
+              <div class="receipt-total-divider">
+                <span class="total-label">Estimated Total:</span>
+                <span class="total-amount" id="summaryTotal">₹9,000</span>
+              </div>
+              <div class="tax-note">* Taxes included. Only 30% advance deposit needed to lock slot.</div>
+
+              <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="proceedFromCalculator()">
+                <i class="fa-solid fa-lock"></i> Lock This Slot Online
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World-Class Amenities Grid -->
+  <section class="amenities-section" id="amenities">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-trophy"></i> Stadium Amenities</div>
+        <h2 class="section-title">Everything Built For <span>Serious Cricket</span></h2>
+        <p class="section-desc center-box">
+          We combine authentic pitch curation with modern luxury so your squad can focus purely on dominating the crease.
+        </p>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3 class="amenity-title">600+ Lux LED Floodlights</h3>
+          <p class="amenity-desc">Even broadcast-grade stadium lighting without shadow blindspots for high-pace pink and white leather ball night matches.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-video"></i></div>
+          <h3 class="amenity-title">Live 4K YouTube Broadcast</h3>
+          <p class="amenity-desc">Multi-angle automated broadcast towers with dynamic on-screen scorecard, slow-mo replays, and commentator audio integration.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+          <h3 class="amenity-title">AC Player Pavilions</h3>
+          <p class="amenity-desc">Spacious climate-controlled team dressing rooms with hot water showers, locker facilities, and tactical whiteboards.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="amenity-title">BOLA Bowling Machines</h3>
+          <p class="amenity-desc">Programmable digital bowling machines offering inswing, outswing, leg-spin, and speeds up to 145 km/h for focused batting drills.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <h3 class="amenity-title">150+ Parking Bays</h3>
+          <p class="amenity-desc">Dedicated secure parking for player cars, team buses, and spectator vehicles right beside the stadium entrances.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <h3 class="amenity-title">Sports Cafeteria &amp; Lounge</h3>
+          <p class="amenity-desc">Post-match barbecue grill, high-protein smoothies, cold beverages, and shaded stadium-view seating for spectators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournament & Corporate Leagues Banner -->
+  <section class="tournament-section" id="tournaments">
+    <div class="container">
+      <div class="tournament-banner-card">
+        <div class="tournament-content">
+          <div class="section-tag"><i class="fa-solid fa-medal"></i> Corporate &amp; Club Leagues</div>
+          <h2 class="tournament-title">Host Your Annual <br>Cricket Tournament Here</h2>
+          <p style="color: var(--text-secondary); font-size: 1.05rem;">
+            Whether you are organizing a 16-team corporate premier league or a weekend club knockout cup, we handle ground curation, jerseys, live broadcasting, food catering, and customized trophies.
+          </p>
+
+          <div class="tournament-features">
+            <div class="t-feat-item">
+              <span class="t-feat-icon">✓</span>
+              <span>Full tournament fixture scheduling &amp; CricHeroes leaderboard</span>
+            </div>
+            <div class="t-feat-item">
+              <span class="t-feat-icon">✓</span>
+              <span>Professional commentary &amp; DJ sound system setup</span>
+            </div>
+            <div class="t-feat-item">
+              <span class="t-feat-icon">✓</span>
+              <span>Customized trophies, medals, and Man-of-the-Match awards</span>
+            </div>
+          </div>
+
+          <button class="btn btn-gold" onclick="openCorporateInquiryModal()">
+            <i class="fa-solid fa-champagne-glasses"></i> Inquire About Tournament Packages
+          </button>
+        </div>
+
+        <div class="tournament-img-frame">
+          <img src="assets/images/tournament_pavilion.jpg" alt="Championship trophy celebration on cricket ground">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews & Testimonials -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-comments"></i> Captain Reviews</div>
+        <h2 class="section-title">Loved By Over <span>1,000+ Cricket Clubs</span></h2>
+        <p class="section-desc center-box">
+          Here is what team captains, corporate leagues, and cricket enthusiasts say about their match experiences at PitchArena.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "The pitch bounce at The Oval is as true as an official Ranji Trophy ground! We played a 40-over leather ball match and the outfield speed was incredible. Floodlights made night batting an absolute joy."
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">VK</div>
+            <div>
+              <div class="reviewer-name">Vikramaditya K.</div>
+              <div class="reviewer-role">Captain, Warriors Cricket Club</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "We booked ThunderBox for our tech company's 12-team internal box cricket tournament. The coordination was seamless, the live stream was broadcast on YouTube with zero lag, and the turf grip was top quality."
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">RA</div>
+            <div>
+              <div class="reviewer-name">Rohan Agrawal</div>
+              <div class="reviewer-role">Head of People &amp; Sports, TechCorp</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "The bowling machine nets helped our batsmen train against 140 km/h outswingers ahead of our district selection matches. Clean dressing rooms, great parking, and easy booking system!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">SN</div>
+            <div>
+              <div class="reviewer-name">Sunil Nambiar</div>
+              <div class="reviewer-role">Senior Coach, Strike Cricket Academy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-circle-question"></i> Help &amp; FAQs</div>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-desc center-box">
+          Got questions about ground rules, rain cancellations, or equipment? We have you covered.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Can we bring our own cricket kit and leather balls?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely! You are completely free to bring your own cricket kits, bats, pads, and balls. Alternatively, if you need extra match balls (Red/White Kookaburra or SG) or team jerseys, you can easily add them to your booking.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if it rains during our booked slot?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We have a 100% Rain Guarantee. If a match is called off due to unplayable rain conditions before 50% of the scheduled time is completed, you receive a free full reschedule voucher valid for 90 days or a 100% credit refund.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are floodlights included in the night slot price?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! All slots scheduled after 6:00 PM automatically include full stadium-grade 600 Lux floodlights along with instant automatic diesel generator backup to prevent any disruption during play.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How much advance payment is needed to lock our slot?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>You only need to pay a 30% advance deposit online via UPI, Credit Card, or Net Banking to confirm and lock your slot on the calendar. The remaining balance can be settled at the ground pavilion reception prior to the toss.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you provide professional umpires and digital scoring?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we have certified BCCI/State panel umpires and trained CricHeroes live scorers available upon request as an add-on. We also provide a full LED boundary scoreboard setup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">🏏</div>
+            <div class="logo-text">Pitch<span>Arena</span></div>
+          </a>
+          <p>The premier cricket ground and sports turf booking network. World-class pitches, high-speed nets, and tournament hosting built for passionate cricketers.</p>
+          <div style="margin-top: 18px; display: flex; gap: 14px; font-size: 1.2rem; color: var(--accent-neon);">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Grounds</h4>
+          <ul class="footer-links">
+            <li><a href="#grounds">The Oval Championship</a></li>
+            <li><a href="#grounds">ThunderBox 24/7 Turf</a></li>
+            <li><a href="#grounds">SpeedPro Batting Nets</a></li>
+            <li><a href="#grounds">Lord's Meadow Stadium</a></li>
+            <li><a href="#calculator">Price Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#tournaments">Corporate Cricket Leagues</a></li>
+            <li><a href="#amenities">Night Floodlight Matches</a></li>
+            <li><a href="#amenities">4K YouTube Streaming</a></li>
+            <li><a href="#amenities">Robo Bowling Machines</a></li>
+            <li><a href="#amenities">CricHeroes Scoring</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Venue &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-neon); margin-right: 6px;"></i> Stadium Boulevard, Sports City</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-neon); margin-right: 6px;"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-neon); margin-right: 6px;"></i> bookings@pitcharena.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-neon); margin-right: 6px;"></i> Open 24 Hours / 7 Days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PitchArena Sports Hub. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Ground Rental</a>
+          <a href="#">Rain Guarantee Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Pill -->
+  <a href="https://wa.me/919876543210?text=Hi%20PitchArena,%20I%20want%20to%20inquire%20about%20cricket%20ground%20rental" target="_blank" class="floating-contact-btn" id="floatingWhatsapp">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span>Instant WhatsApp Chat</span>
+  </a>
+
+  <!-- ==========================================================================
+       Modals
+       ========================================================================== -->
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal" onclick="handleBackdropClick(event, 'bookingModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="bookingModalTitle">Reserve Cricket Slot</h3>
+        <button class="modal-close-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+
+      <div class="modal-body" id="bookingModalBody">
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="modal-form-grid">
+            
+            <div class="form-group form-field-full">
+              <label for="bookGroundSelect">Selected Ground / Venue</label>
+              <select id="bookGroundSelect" required onchange="syncModalPricing()">
+                <option value="oval">The Oval Championship Stadium (₹4,500/hr)</option>
+                <option value="thunderbox">ThunderBox 24/7 Turf (₹1,400/hr)</option>
+                <option value="speedpro">SpeedPro Batting Nets &amp; RoboArm (₹800/hr)</option>
+                <option value="lords">Lord's Meadow Stadium (₹5,000/hr)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookDate">Match Date</label>
+              <input type="date" id="bookDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookTimeSlot">Time Slot</label>
+              <select id="bookTimeSlot" required onchange="syncModalPricing()">
+                <option value="morning">Morning (06:00 AM - 10:00 AM)</option>
+                <option value="afternoon">Afternoon (10:00 AM - 02:00 PM)</option>
+                <option value="evening">Evening (02:00 PM - 06:00 PM)</option>
+                <option value="night">Night Floodlight (06:00 PM - 10:00 PM)</option>
+                <option value="latenight">Late Night (10:00 PM - 02:00 AM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookDuration">Duration</label>
+              <select id="bookDuration" required onchange="syncModalPricing()">
+                <option value="2">2 Hours Match</option>
+                <option value="4" selected>4 Hours (Standard T20 Match)</option>
+                <option value="8">8 Hours (Full Day Tournament)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookBallType">Ball Preference</label>
+              <select id="bookBallType">
+                <option value="leather-red">Red Leather Ball (4-Piece)</option>
+                <option value="leather-white">White Leather Ball (T20)</option>
+                <option value="tennis-heavy">Heavy Tennis Ball (Green/Red)</option>
+                <option value="own">We will bring our own balls</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookCaptainName">Captain / Organizer Name</label>
+              <input type="text" id="bookCaptainName" placeholder="e.g. Virat Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookTeamName">Team / Company Name</label>
+              <input type="text" id="bookTeamName" placeholder="e.g. Super Strikers CC" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookPhone">WhatsApp / Mobile Number</label>
+              <input type="tel" id="bookPhone" placeholder="+91 98765 00000" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookEmail">Email Address</label>
+              <input type="email" id="bookEmail" placeholder="captain@team.com" required>
+            </div>
+
+            <div class="form-group form-field-full">
+              <label for="bookNotes">Special Requests (Umpires, Live Stream, Custom rules)</label>
+              <textarea id="bookNotes" rows="2" placeholder="Mention if you require live commentary, video recording, or extra jersey bibs..."></textarea>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Quote Box in Modal -->
+          <div class="booking-confirm-box">
+            <div class="confirm-item">
+              <span>Estimated Rental Total:</span>
+              <strong id="modalTotalAmount">₹18,000</strong>
+            </div>
+            <div class="confirm-item">
+              <span>Advance to Lock Slot (30%):</span>
+              <strong id="modalAdvanceAmount">₹5,400</strong>
+            </div>
+            <div class="confirm-item">
+              <span>Slot Status:</span>
+              <span style="color: var(--accent-neon); font-weight: 700;">● Available for Instant Lock</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-lock"></i> Confirm &amp; Lock Slot Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ground Detail Quickview Modal -->
+  <div class="modal-backdrop" id="detailModal" onclick="handleBackdropClick(event, 'detailModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="detailModalTitle">Ground Specifications</h3>
+        <button class="modal-close-btn" onclick="closeModal('detailModal')">&times;</button>
+      </div>
+      <div class="modal-body" id="detailModalBody">
+        <!-- Content injected dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate / Tournament Inquiry Modal -->
+  <div class="modal-backdrop" id="corporateModal" onclick="handleBackdropClick(event, 'corporateModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Host Your Corporate Cup / League</h3>
+        <button class="modal-close-btn" onclick="closeModal('corporateModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitCorporateInquiry(event)">
+          <div class="modal-form-grid">
+            <div class="form-group">
+              <label>Company / Organization</label>
+              <input type="text" id="corpCompany" placeholder="e.g. Google India" required>
+            </div>
+            <div class="form-group">
+              <label>Estimated Teams</label>
+              <select id="corpTeams">
+                <option value="4">4 Teams (Knockout)</option>
+                <option value="8" selected>8 Teams (League + Knockout)</option>
+                <option value="16">16 Teams (Mega Corporate League)</option>
+                <option value="other">Custom Format</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Contact Person</label>
+              <input type="text" id="corpName" placeholder="Organizing Lead Name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="corpPhone" placeholder="+91 99887 76655" required>
+            </div>
+            <div class="form-group form-field-full">
+              <label>Preferred Tournament Dates &amp; Requirements</label>
+              <textarea id="corpNotes" rows="3" placeholder="Tell us if you require catering, custom printed player jerseys, championship trophies, DJ, etc."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Send Tournament Proposal Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
