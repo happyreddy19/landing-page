@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Cricket Tournaments &amp; Corporate Leagues | PitchArena Sports</title>
+  <meta name="description" content="Host your company corporate cup or club cricket league at PitchArena. Full turnkey tournament management, CricHeroes fixtures, live 4K streaming, trophies, and catering.">
+  <meta name="keywords" content="cricket tournament booking, corporate cricket league, rent ground for cricket tournament, box cricket tournament, cricket championship hosting">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏏</text></svg>">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <span class="badge-pulse">LEAGUE HOSTING</span>
+    <span>Booking dates open for Q4 Corporate Premier Leagues &amp; Inter-Company Cups!</span>
+    <a href="#inquiryForm" style="text-decoration: underline; font-weight: 700; color: #fff;">Request Proposal →</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="siteLogo">
+        <div class="logo-icon">🏏</div>
+        <div class="logo-text">Pitch<span>Arena</span></div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="grounds.html">Our Grounds</a></li>
+        <li><a href="calculator.html">Slot Calculator</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="tournaments.html" class="active">Tournaments</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" id="navBookBtn" onclick="openCorporateInquiryModal()">
+          <i class="fa-solid fa-trophy"></i> Host a League
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header for Tournaments -->
+  <header class="feedback-hero" id="tournamentsHero">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-medal"></i> Turnkey Championship Management
+      </div>
+      <h1 class="feedback-hero-headline">
+        Host Your Annual Cricket <br>
+        <span class="gradient-text">Tournaments &amp; Corporate Leagues</span>
+      </h1>
+      <p class="feedback-hero-lead">
+        From 16-team corporate premier leagues to intense weekend knockout trophies. We manage ground curation, CricHeroes app fixtures, customized player jerseys, live YouTube commentary, sports catering, and championship trophies.
+      </p>
+
+      <div class="hero-stats-strip">
+        <div class="stat-pill">
+          <i class="fa-solid fa-trophy"></i>
+          <span><strong>140+</strong> Corporate Cups Hosted</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-users"></i>
+          <span><strong>4 to 32</strong> Team Formats</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span><strong>BCCI / State</strong> Panel Umpires</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-video"></i>
+          <span><strong>YouTube Multi-Cam</strong> Broadcast</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tournaments Main Section -->
+  <main class="tournament-section" id="tournaments" style="padding-top: 20px;">
+    <div class="container">
+      
+      <!-- Tournament Formats Grid -->
+      <div class="text-center" style="margin-bottom: 40px;">
+        <div class="section-tag"><i class="fa-solid fa-cubes"></i> Tournament Packages</div>
+        <h2 class="section-title">Designed For <span>Any Cricket Format</span></h2>
+        <p class="section-desc center-box">
+          Select from our three curated tournament packages or customize your squad's rules, overs, and match timings.
+        </p>
+      </div>
+
+      <div class="grounds-grid" style="margin-bottom: 60px;">
+        
+        <!-- Package 1: Corporate Premier League -->
+        <div class="ground-card">
+          <div class="ground-img-box">
+            <img src="assets/images/tournament_pavilion.jpg" alt="Corporate League Stadium">
+            <span class="ground-badge">Mega Corporate Cup</span>
+            <div class="ground-price-tag">8 to 16 Teams</div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">Corporate Premier League (CPL)</h3>
+            <div class="ground-location"><i class="fa-solid fa-building"></i> Ideal for Tech, Banking &amp; Enterprise Cups</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-sitemap"></i> League + Knockout Stages</div>
+              <div class="spec-item"><i class="fa-solid fa-shirt"></i> Custom Printed Team Jerseys</div>
+              <div class="spec-item"><i class="fa-solid fa-microphone-lines"></i> DJ &amp; Professional Commentary</div>
+              <div class="spec-item"><i class="fa-solid fa-utensils"></i> High-Protein Sports Catering</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">CricHeroes App Leaderboard</span>
+              <span class="feature-pill">Grand Trophy &amp; Medals</span>
+              <span class="feature-pill">Man of the Match Awards</span>
+              <span class="feature-pill">Full HD YouTube Stream</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-gold btn-sm" style="width: 100%;" onclick="openCorporateInquiryModal()">Inquire Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2: Weekend Club Knockout Trophy -->
+        <div class="ground-card">
+          <div class="ground-img-box">
+            <img src="assets/images/cricket_ground_hero.jpg" alt="Weekend Cricket Knockout Cup">
+            <span class="ground-badge">Club Championship</span>
+            <div class="ground-price-tag">4 to 8 Teams</div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">Weekend Knockout Championship</h3>
+            <div class="ground-location"><i class="fa-solid fa-calendar-days"></i> Saturday &amp; Sunday Full Ground</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-bolt"></i> Fast 20-Over Matches</div>
+              <div class="spec-item"><i class="fa-solid fa-baseball-bat-ball"></i> Red/White Kookaburra Balls Included</div>
+              <div class="spec-item"><i class="fa-solid fa-scale-balanced"></i> Official State Panel Umpires</div>
+              <div class="spec-item"><i class="fa-solid fa-trophy"></i> Winner &amp; Runner-up Cups</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Sight Screens Ready</span>
+              <span class="feature-pill">LED Scoreboard Sync</span>
+              <span class="feature-pill">Player Hydration</span>
+              <span class="feature-pill">Physio Support</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="openCorporateInquiryModal()">Inquire Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3: Midnight Box Cricket Derby -->
+        <div class="ground-card">
+          <div class="ground-img-box">
+            <img src="assets/images/box_cricket_turf.jpg" alt="Box Cricket Turf Derby">
+            <span class="ground-badge">Enclosed Box Derby</span>
+            <div class="ground-price-tag">6 to 12 Teams</div>
+          </div>
+          <div class="ground-body">
+            <h3 class="ground-title">Midnight Box Cricket Derby</h3>
+            <div class="ground-location"><i class="fa-solid fa-moon"></i> ThunderBox 24/7 Floodlight Arena</div>
+            
+            <div class="ground-specs">
+              <div class="spec-item"><i class="fa-solid fa-users"></i> 6v6 or 8v8 Action Matches</div>
+              <div class="spec-item"><i class="fa-solid fa-clock"></i> 8 PM to 2 AM Night Tournaments</div>
+              <div class="spec-item"><i class="fa-solid fa-music"></i> Arena Surround Sound Track</div>
+              <div class="spec-item"><i class="fa-solid fa-burger"></i> Hot Bites &amp; Cold Energy Smoothies</div>
+            </div>
+
+            <div class="ground-features">
+              <span class="feature-pill">Zero Slip Turf</span>
+              <span class="feature-pill">Tennis Ball Fast Play</span>
+              <span class="feature-pill">Rapid 6-Over Matches</span>
+              <span class="feature-pill">Best Batsman Trophy</span>
+            </div>
+
+            <div class="ground-footer">
+              <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="openCorporateInquiryModal()">Inquire Package</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Turnkey Management Features -->
+      <section style="margin: 60px 0 80px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--card-shadow);">
+          <div class="text-center" style="margin-bottom: 30px;">
+            <div class="section-tag"><i class="fa-solid fa-list-check"></i> Complete Organization</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: #fff;">What We Handle For Your Tournament</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">You bring the players; we take care of all logistics, curation, and ceremony.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <div style="background: rgba(0,245,155,0.15); color: var(--accent-neon); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-diagram-project"></i></div>
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Fixture Scheduling &amp; App</h4>
+                <p style="font-size: 0.86rem; color: var(--text-secondary);">Full schedule generation on CricHeroes with live standings, MVP leaderboard, and boundary stats.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <div style="background: rgba(245,158,11,0.15); color: var(--accent-gold); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-trophy"></i></div>
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Custom Trophies &amp; Medals</h4>
+                <p style="font-size: 0.86rem; color: var(--text-secondary);">Championship cup, Runner-up trophy, Golden Bat, Golden Ball, and custom player participation medals.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <div style="background: rgba(6,182,212,0.15); color: var(--accent-cyan); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-video"></i></div>
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px;">4K YouTube Broadcast &amp; DJ</h4>
+                <p style="font-size: 0.86rem; color: var(--text-secondary);">Live stream with match commentator, boundary audio, crowd cheering music, and slow-mo replays.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <div style="background: rgba(139,92,246,0.15); color: var(--accent-purple); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-burger"></i></div>
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Sports Catering &amp; Hydration</h4>
+                <p style="font-size: 0.86rem; color: var(--text-secondary);">Unlimited chilled electrolyte drinks, bananas, breakfast boxes, or executive lunch buffet at the pavilion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- On-Page Tournament Proposal Form -->
+      <section style="margin: 60px 0 80px;" id="inquiryForm">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--card-shadow); max-width: 800px; margin: 0 auto; position: relative;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange)); border-radius: var(--radius-lg) var(--radius-lg) 0 0;"></div>
+          
+          <div class="text-center" style="margin-bottom: 28px;">
+            <div class="section-tag" style="background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); color: var(--accent-gold);">
+              <i class="fa-solid fa-file-lines"></i> Instant Proposal
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.85rem; color: #fff;">Request a Custom Tournament Proposal</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Fill out the details below and our League Director will reach out within 2 hours with customized slot options and pricing.</p>
+          </div>
+
+          <form onsubmit="submitCorporateInquiry(event)">
+            <div class="modal-form-grid">
+              <div class="form-group">
+                <label for="corpCompany">Company / Club Organization *</label>
+                <input type="text" id="corpCompany" placeholder="e.g. Google India / Bangalore Club" required>
+              </div>
+
+              <div class="form-group">
+                <label for="corpTeams">Estimated Teams Participating</label>
+                <select id="corpTeams">
+                  <option value="4">4 Teams (Single-Day Knockout)</option>
+                  <option value="8" selected>8 Teams (League + Semis + Final)</option>
+                  <option value="16">16 Teams (Multi-Weekend Mega League)</option>
+                  <option value="other">Custom Format / Number of Teams</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="corpName">Tournament Lead / Contact Name *</label>
+                <input type="text" id="corpName" placeholder="Full Name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="corpPhone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="corpPhone" placeholder="+91 99887 76655" required>
+              </div>
+
+              <div class="form-group form-field-full">
+                <label for="corpNotes">Preferred Tournament Dates &amp; Requirements</label>
+                <textarea id="corpNotes" rows="3" placeholder="Mention dates, preferred ground (The Oval / ThunderBox), custom jerseys, food catering, DJ music..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+              <i class="fa-solid fa-paper-plane"></i> Send Tournament Proposal Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏏</div>
+            <div class="logo-text">Pitch<span>Arena</span></div>
+          </a>
+          <p>The premier cricket ground and sports turf booking network. World-class pitches, high-speed nets, and tournament hosting built for passionate cricketers.</p>
+          <div style="margin-top: 18px; display: flex; gap: 14px; font-size: 1.2rem; color: var(--accent-neon);">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Grounds</h4>
+          <ul class="footer-links">
+            <li><a href="grounds.html">The Oval Championship</a></li>
+            <li><a href="grounds.html">ThunderBox 24/7 Turf</a></li>
+            <li><a href="grounds.html">SpeedPro Batting Nets</a></li>
+            <li><a href="grounds.html">Lord's Meadow Stadium</a></li>
+            <li><a href="calculator.html">Price Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="amenities.html">Stadium Amenities</a></li>
+            <li><a href="tournaments.html" style="color: var(--accent-neon);">Corporate Leagues</a></li>
+            <li><a href="reviews.html">Captain Reviews</a></li>
+            <li><a href="feedback.html">Submit Feedback</a></li>
+            <li><a href="faq.html">Rain Guarantee &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Venue &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-neon); margin-right: 6px;"></i> Stadium Boulevard, Sports City</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-neon); margin-right: 6px;"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-neon); margin-right: 6px;"></i> tournaments@pitcharena.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-neon); margin-right: 6px;"></i> Open 24 Hours / 7 Days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PitchArena Sports Hub. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Ground Rental</a>
+          <a href="faq.html">Rain Guarantee Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919876543210?text=Hi%20PitchArena,%20I%20want%20to%20host%20a%20tournament" target="_blank" class="floating-contact-btn" id="floatingWhatsapp">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span>Instant WhatsApp Chat</span>
+  </a>
+
+  <!-- Corporate / Tournament Inquiry Modal -->
+  <div class="modal-backdrop" id="corporateModal" onclick="handleBackdropClick(event, 'corporateModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Host Your Corporate Cup / League</h3>
+        <button class="modal-close-btn" onclick="closeModal('corporateModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitCorporateInquiry(event)">
+          <div class="modal-form-grid">
+            <div class="form-group">
+              <label>Company / Organization</label>
+              <input type="text" id="modalCorpCompany" placeholder="e.g. Google India" required>
+            </div>
+            <div class="form-group">
+              <label>Estimated Teams</label>
+              <select id="modalCorpTeams">
+                <option value="4">4 Teams (Knockout)</option>
+                <option value="8" selected>8 Teams (League + Knockout)</option>
+                <option value="16">16 Teams (Mega Corporate League)</option>
+                <option value="other">Custom Format</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Contact Person</label>
+              <input type="text" id="modalCorpName" placeholder="Organizing Lead Name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="modalCorpPhone" placeholder="+91 99887 76655" required>
+            </div>
+            <div class="form-group form-field-full">
+              <label>Preferred Tournament Dates &amp; Requirements</label>
+              <textarea id="modalCorpNotes" rows="3" placeholder="Tell us if you require catering, custom printed player jerseys, championship trophies, DJ, etc."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Send Tournament Proposal Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

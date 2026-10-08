@@ -301,8 +301,10 @@ input, select, textarea {
   color: var(--text-secondary);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent-neon);
+  text-shadow: 0 0 12px rgba(0, 245, 155, 0.4);
 }
 
 .nav-actions {

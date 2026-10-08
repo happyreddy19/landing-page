@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Price Calculator &amp; Live Quote | PitchArena Cricket Rentals</title>
+  <meta name="description" content="Calculate real-time ground rental prices for PitchArena cricket stadiums, floodlight box cricket arenas, and batting nets. Instant breakdown with add-ons and advance deposit estimate.">
+  <meta name="keywords" content="cricket ground price calculator, turf booking cost, rent cricket pitch rates, box cricket rates, pitcharena price">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏏</text></svg>">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <span class="badge-pulse">HOT SLOTS</span>
+    <span>Book a 4-Hour slot today and receive a complimentary 2-pack Kookaburra Match Ball Box!</span>
+    <a href="#calculator" style="text-decoration: underline; font-weight: 700; color: #fff;">Calculate Now →</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="siteLogo">
+        <div class="logo-icon">🏏</div>
+        <div class="logo-text">Pitch<span>Arena</span></div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="grounds.html">Our Grounds</a></li>
+        <li><a href="calculator.html" class="active">Slot Calculator</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="tournaments.html">Tournaments</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" id="navBookBtn" onclick="openBookingModal()">
+          <i class="fa-solid fa-calendar-check"></i> Book a Slot
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header for Calculator -->
+  <header class="feedback-hero" id="calcHero">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-calculator"></i> Transparent Match Pricing
+      </div>
+      <h1 class="feedback-hero-headline">
+        Real-Time Slot &amp; Tournament <br>
+        <span class="gradient-text">Price Calculator</span>
+      </h1>
+      <p class="feedback-hero-lead">
+        Select your arena, match duration, lighting window, and optional match add-ons. Get an instant, 100% transparent quotation with zero hidden fees.
+      </p>
+
+      <div class="hero-stats-strip">
+        <div class="stat-pill">
+          <i class="fa-solid fa-tag"></i>
+          <span><strong>Zero</strong> Hidden Surcharges</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-coins"></i>
+          <span><strong>30% Advance</strong> to Lock Slot</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-bolt"></i>
+          <span><strong>Generator Backup</strong> Included</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-cloud-sun-rain"></i>
+          <span><strong>100% Rain</strong> Reschedule Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Live Slot & Price Calculator Section -->
+  <main class="calculator-section" id="calculator" style="padding-top: 10px;">
+    <div class="container">
+      
+      <div class="calc-card">
+        <div class="calc-grid">
+          
+          <!-- Left Options Configurator -->
+          <div class="calc-inputs">
+            
+            <!-- Ground Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-stadium"></i> 1. Choose Ground / Arena</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="oval" data-rate="4500" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">The Oval Stadium</span>
+                  <span class="price-hint">₹4,500 / hr</span>
+                  <span class="desc">Full 11v11 Red Soil Turf</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="thunderbox" data-rate="1400" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">ThunderBox Turf</span>
+                  <span class="price-hint">₹1,400 / hr</span>
+                  <span class="desc">Enclosed Box Turf</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="speedpro" data-rate="800" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">SpeedPro Nets</span>
+                  <span class="price-hint">₹800 / hr</span>
+                  <span class="desc">Robo Bowling Machine</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcGround" value="lords" data-rate="5000" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Lord's Meadow</span>
+                  <span class="price-hint">₹5,000 / hr</span>
+                  <span class="desc">Black Soil Tournament Turf</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Duration Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-stopwatch"></i> 2. Match Duration</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="2" data-hours="2" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">2 Hours</span>
+                  <span class="desc">Box match or net training</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="4" data-hours="4" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">4 Hours (T20)</span>
+                  <span class="desc">Full standard 20-over game</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcDuration" value="8" data-hours="8" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">8 Hours (Full Day)</span>
+                  <span class="desc">Tournament or Corporate League</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Time Slot & Floodlight Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-cloud-sun"></i> 3. Time Window</div>
+            <div class="calc-option-grid">
+              <label class="calc-radio-card">
+                <input type="radio" name="calcTime" value="day" data-multiplier="1.0" checked onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Morning / Daytime</span>
+                  <span class="desc">06:00 AM - 05:00 PM (Standard)</span>
+                </div>
+              </label>
+
+              <label class="calc-radio-card">
+                <input type="radio" name="calcTime" value="night" data-multiplier="1.15" onchange="recalculatePrice()">
+                <div class="calc-radio-label">
+                  <span class="name">Night Floodlights (+15%)</span>
+                  <span class="desc">06:00 PM onwards (High-Lux Lights)</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Add-ons Selection -->
+            <div class="calc-group-title"><i class="fa-solid fa-plus-circle"></i> 4. Match-Day Add-ons (Optional)</div>
+            <div class="addons-list">
+              
+              <div class="addon-card" id="addon-umpires" onclick="toggleAddon('umpires', 1500)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">2 Certified Umpires + Scorer</div>
+                    <div class="desc">Official match officiating &amp; CricHeroes live score update</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹1,500</div>
+              </div>
+
+              <div class="addon-card" id="addon-stream" onclick="toggleAddon('stream', 2800)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">4K Multi-Cam YouTube Stream</div>
+                    <div class="desc">Automated broadcast towers with scorecard graphics &amp; slow-mo replays</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹2,800</div>
+              </div>
+
+              <div class="addon-card" id="addon-balls" onclick="toggleAddon('balls', 950)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">Match Ball Box (2 Kookaburra Leather Balls)</div>
+                    <div class="desc">Four-piece red, white, or pink match-standard leather balls</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹950</div>
+              </div>
+
+              <div class="addon-card" id="addon-refreshments" onclick="toggleAddon('refreshments', 800)">
+                <div class="addon-info">
+                  <div class="addon-custom-chk"><i class="fa-solid fa-check"></i></div>
+                  <div class="addon-text">
+                    <div class="name">Hydration Station &amp; Energy Drinks</div>
+                    <div class="desc">Electrolytes, chilled bottled water &amp; bananas for 22 players</div>
+                  </div>
+                </div>
+                <div class="addon-price">+₹800</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Real-time Calculation Summary -->
+          <div class="calc-summary-wrapper">
+            <div class="calc-receipt">
+              <div class="receipt-title">
+                <span><i class="fa-solid fa-receipt"></i> Rental Breakdown</span>
+                <span class="badge-pulse" style="font-size: 0.72rem;">LIVE QUOTE</span>
+              </div>
+
+              <div class="receipt-rows">
+                <div class="receipt-row">
+                  <span>Selected Ground:</span>
+                  <span class="val" id="summaryGround">The Oval Championship</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Base Rate:</span>
+                  <span class="val" id="summaryRate">₹4,500 / hr</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Duration:</span>
+                  <span class="val" id="summaryDuration">2 Hours</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Lighting / Session:</span>
+                  <span class="val" id="summaryLighting">Daytime Regular</span>
+                </div>
+                <div class="receipt-row">
+                  <span>Add-ons Total:</span>
+                  <span class="val" id="summaryAddons">₹0</span>
+                </div>
+              </div>
+
+              <div class="receipt-total-divider">
+                <span class="total-label">Estimated Total:</span>
+                <span class="total-amount" id="summaryTotal">₹9,000</span>
+              </div>
+              <div class="tax-note">* Taxes included. Only 30% advance deposit needed to lock slot.</div>
+
+              <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="proceedFromCalculator()">
+                <i class="fa-solid fa-lock"></i> Lock This Slot Online
+              </button>
+            </div>
+
+            <!-- Transparency Features Card -->
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 22px; margin-top: 20px;">
+              <h4 style="font-family: var(--font-heading); font-size: 1rem; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-circle-info" style="color: var(--accent-neon);"></i> Transparent Booking Terms
+              </h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.84rem; color: var(--text-secondary);">
+                <li><i class="fa-solid fa-check" style="color: var(--accent-neon); margin-right: 6px;"></i> Pay 30% online via UPI/Card to lock the slot immediately on our calendar.</li>
+                <li><i class="fa-solid fa-check" style="color: var(--accent-neon); margin-right: 6px;"></i> Pay the remaining 70% at the venue pavilion reception before the match toss.</li>
+                <li><i class="fa-solid fa-check" style="color: var(--accent-neon); margin-right: 6px;"></i> Free slot reschedule with 48 hours notice. 100% Rain Guarantee credit voucher.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏏</div>
+            <div class="logo-text">Pitch<span>Arena</span></div>
+          </a>
+          <p>The premier cricket ground and sports turf booking network. World-class pitches, high-speed nets, and tournament hosting built for passionate cricketers.</p>
+          <div style="margin-top: 18px; display: flex; gap: 14px; font-size: 1.2rem; color: var(--accent-neon);">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Grounds</h4>
+          <ul class="footer-links">
+            <li><a href="grounds.html">The Oval Championship</a></li>
+            <li><a href="grounds.html">ThunderBox 24/7 Turf</a></li>
+            <li><a href="grounds.html">SpeedPro Batting Nets</a></li>
+            <li><a href="grounds.html">Lord's Meadow Stadium</a></li>
+            <li><a href="calculator.html" style="color: var(--accent-neon);">Price Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="amenities.html">Stadium Amenities</a></li>
+            <li><a href="tournaments.html">Corporate Leagues</a></li>
+            <li><a href="reviews.html">Captain Reviews</a></li>
+            <li><a href="feedback.html">Submit Feedback</a></li>
+            <li><a href="faq.html">Rain Guarantee &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Venue &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-neon); margin-right: 6px;"></i> Stadium Boulevard, Sports City</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-neon); margin-right: 6px;"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-neon); margin-right: 6px;"></i> bookings@pitcharena.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-neon); margin-right: 6px;"></i> Open 24 Hours / 7 Days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PitchArena Sports Hub. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Ground Rental</a>
+          <a href="faq.html">Rain Guarantee Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919876543210?text=Hi%20PitchArena,%20I%20have%20a%20pricing%20question" target="_blank" class="floating-contact-btn" id="floatingWhatsapp">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span>Instant WhatsApp Chat</span>
+  </a>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal" onclick="handleBackdropClick(event, 'bookingModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="bookingModalTitle">Reserve Cricket Slot</h3>
+        <button class="modal-close-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+
+      <div class="modal-body" id="bookingModalBody">
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="modal-form-grid">
+            
+            <div class="form-group form-field-full">
+              <label for="bookGroundSelect">Selected Ground / Venue</label>
+              <select id="bookGroundSelect" required onchange="syncModalPricing()">
+                <option value="oval">The Oval Championship Stadium (₹4,500/hr)</option>
+                <option value="thunderbox">ThunderBox 24/7 Turf (₹1,400/hr)</option>
+                <option value="speedpro">SpeedPro Batting Nets &amp; RoboArm (₹800/hr)</option>
+                <option value="lords">Lord's Meadow Stadium (₹5,000/hr)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookDate">Match Date</label>
+              <input type="date" id="bookDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookTimeSlot">Preferred Slot</label>
+              <select id="bookTimeSlot" required onchange="syncModalPricing()">
+                <option value="morning">Morning (06:00 AM - 10:00 AM)</option>
+                <option value="afternoon">Afternoon (02:00 PM - 06:00 PM)</option>
+                <option value="night" selected>Night Floodlights (06:00 PM - 10:00 PM)</option>
+                <option value="midnight">Midnight Derby (10:00 PM - 02:00 AM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookDuration">Duration (Hours)</label>
+              <select id="bookDuration" required onchange="syncModalPricing()">
+                <option value="2">2 Hours (Quick Match)</option>
+                <option value="4" selected>4 Hours (Standard 20-Over)</option>
+                <option value="6">6 Hours (Double Match)</option>
+                <option value="8">8 Hours (Full Day League)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookCaptainName">Captain / Organizer Name</label>
+              <input type="text" id="bookCaptainName" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookTeamName">Team / Club Name</label>
+              <input type="text" id="bookTeamName" placeholder="e.g. Bangalore Strikers" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookPhone">WhatsApp / Mobile Number</label>
+              <input type="tel" id="bookPhone" placeholder="+91 98765 00000" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bookEmail">Email Address</label>
+              <input type="email" id="bookEmail" placeholder="captain@team.com" required>
+            </div>
+
+            <div class="form-group form-field-full">
+              <label for="bookNotes">Special Requests (Umpires, Live Stream, Custom rules)</label>
+              <textarea id="bookNotes" rows="2" placeholder="Mention if you require live commentary, video recording, or extra jersey bibs..."></textarea>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Quote Box in Modal -->
+          <div class="booking-confirm-box">
+            <div class="confirm-item">
+              <span>Estimated Rental Total:</span>
+              <strong id="modalTotalAmount">₹18,000</strong>
+            </div>
+            <div class="confirm-item">
+              <span>Advance to Lock Slot (30%):</span>
+              <strong id="modalAdvanceAmount">₹5,400</strong>
+            </div>
+            <div class="confirm-item">
+              <span>Slot Status:</span>
+              <span style="color: var(--accent-neon); font-weight: 700;">● Available for Instant Lock</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-lock"></i> Confirm &amp; Lock Slot Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
