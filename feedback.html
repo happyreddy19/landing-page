@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captain Feedback &amp; Ground Reviews | PitchArena Cricket Rentals</title>
+  <meta name="description" content="Read and submit authentic match feedback, pitch bounce ratings, floodlight reviews, and pavilion comfort scores for PitchArena cricket grounds and box turfs.">
+  <meta name="keywords" content="cricket ground feedback, turf cricket review, pitch bounce ratings, box cricket reviews, PitchArena reviews, rent cricket ground feedback">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏏</text></svg>">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <span class="badge-pulse">CAPTAIN REWARDS</span>
+    <span>Submit your match feedback &amp; unlock a <strong>10% Discount Code</strong> for your next fixture!</span>
+    <a href="#feedbackForm" style="text-decoration: underline; font-weight: 700; color: #fff;">Rate Your Match →</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="siteLogo">
+        <div class="logo-icon">🏏</div>
+        <div class="logo-text">Pitch<span>Arena</span></div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#grounds">Our Grounds</a></li>
+        <li><a href="index.html#calculator">Slot Calculator</a></li>
+        <li><a href="index.html#amenities">Amenities</a></li>
+        <li><a href="index.html#tournaments">Tournaments</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="feedback.html" style="color: var(--accent-neon); font-weight: 700;">Feedback</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="index.html#grounds" class="btn btn-primary btn-sm" id="navBookBtn">
+          <i class="fa-solid fa-calendar-check"></i> Book a Slot
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Feedback Hero Section -->
+  <header class="feedback-hero" id="feedbackHero">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-star-half-stroke"></i> Match Experience &amp; Ratings
+      </div>
+      <h1 class="feedback-hero-headline">
+        Captain Feedback &amp; <br>
+        <span class="gradient-text">Ground Performance Reviews</span>
+      </h1>
+      <p class="feedback-hero-lead">
+        Your match feedback directly dictates our 48-hour rolling pitch curation, floodlight alignment, and pavilion maintenance. Share your squad's experience and claim a 10% voucher for your next booking.
+      </p>
+
+      <div class="hero-stats-strip">
+        <div class="stat-pill">
+          <i class="fa-solid fa-star"></i>
+          <span><strong>4.9 / 5.0</strong> Overall Rating</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-trophy"></i>
+          <span><strong>1,850+</strong> Matches Played</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span><strong>600+ Lux</strong> Broadcast Lights</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-cloud-rain"></i>
+          <span><strong>100%</strong> Rain Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Feedback Main Form & Scorecard Section -->
+  <main class="feedback-section" id="feedbackSection">
+    <div class="container">
+      <div class="feedback-grid">
+        
+        <!-- Left Column: Comprehensive Feedback Form -->
+        <div class="feedback-form-card" id="feedbackFormCard">
+          <div class="form-header-group">
+            <h2 class="form-header-title">
+              <i class="fa-solid fa-pen-nib"></i> Submit Match Feedback
+            </h2>
+            <p class="form-header-desc">
+              Rate your recent match, nets session, or box cricket tournament. Verified feedback gets featured on our live community feed!
+            </p>
+          </div>
+
+          <!-- Reward Banner -->
+          <div class="feedback-reward-callout">
+            <div class="reward-callout-icon">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <div class="reward-callout-text">
+              <h4>Unlock 10% Match Discount Voucher</h4>
+              <p>Every completed captain review receives instant promo code <strong>PITCH10</strong> valid for weekend slots.</p>
+            </div>
+          </div>
+
+          <form id="captainFeedbackForm" onsubmit="submitCaptainFeedback(event)">
+            
+            <!-- Step 1: Select Venue Played -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>1. Select Ground / Venue Played <span class="req">*</span></span>
+                <small>Choose the venue you booked</small>
+              </label>
+              
+              <div class="ground-cards-grid">
+                <div class="ground-option-card selected" data-ground="the-oval">
+                  <input type="radio" name="groundSelection" class="ground-option-radio" checked>
+                  <div>
+                    <div class="ground-opt-name">The Oval Stadium</div>
+                    <div class="ground-opt-type">Full Ground &bull; Red Soil Pitch</div>
+                  </div>
+                </div>
+
+                <div class="ground-option-card" data-ground="thunderbox">
+                  <input type="radio" name="groundSelection" class="ground-option-radio">
+                  <div>
+                    <div class="ground-opt-name">ThunderBox 24/7 Turf</div>
+                    <div class="ground-opt-type">Box Cricket &bull; High-Density Turf</div>
+                  </div>
+                </div>
+
+                <div class="ground-option-card" data-ground="speedpro">
+                  <input type="radio" name="groundSelection" class="ground-option-radio">
+                  <div>
+                    <div class="ground-opt-name">SpeedPro Batting Nets</div>
+                    <div class="ground-opt-type">Bowling Machine &bull; 22-Yard Astro</div>
+                  </div>
+                </div>
+
+                <div class="ground-option-card" data-ground="lords-meadow">
+                  <input type="radio" name="groundSelection" class="ground-option-radio">
+                  <div>
+                    <div class="ground-opt-name">Lord's Meadow Stadium</div>
+                    <div class="ground-opt-type">Championship &bull; Black Cotton Soil</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Overall Star Rating -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>2. Overall Match Experience <span class="req">*</span></span>
+                <small>Click to rate 1 to 5 stars</small>
+              </label>
+              
+              <div class="star-selector-box">
+                <div class="star-rating-inputs" id="overallStars">
+                  <i class="fa-solid fa-star star-btn active" data-value="1" title="1 Star - Poor"></i>
+                  <i class="fa-solid fa-star star-btn active" data-value="2" title="2 Stars - Fair"></i>
+                  <i class="fa-solid fa-star star-btn active" data-value="3" title="3 Stars - Good"></i>
+                  <i class="fa-solid fa-star star-btn active" data-value="4" title="4 Stars - Very Good"></i>
+                  <i class="fa-solid fa-star star-btn active" data-value="5" title="5 Stars - World Class"></i>
+                </div>
+                <div class="rating-status-text" id="overallRatingStatus">
+                  🏏 5/5 - Sensational! International Grade
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Specific Dimension Ratings -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>3. Specific Ground Dimensions</span>
+                <small>Fine-grained ratings</small>
+              </label>
+
+              <div class="dimension-ratings-grid">
+                <div class="dimension-card">
+                  <div class="dimension-header">
+                    <i class="fa-solid fa-cricket-bat-ball"></i>
+                    <span>Pitch Bounce &amp; Outfield</span>
+                  </div>
+                  <div class="dimension-stars" id="pitchStars">
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="1"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="2"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="3"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="4"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="5"></i>
+                  </div>
+                </div>
+
+                <div class="dimension-card">
+                  <div class="dimension-header">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Floodlight Visibility</span>
+                  </div>
+                  <div class="dimension-stars" id="lightsStars">
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="1"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="2"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="3"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="4"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="5"></i>
+                  </div>
+                </div>
+
+                <div class="dimension-card">
+                  <div class="dimension-header">
+                    <i class="fa-solid fa-shower"></i>
+                    <span>Pavilion &amp; Washrooms</span>
+                  </div>
+                  <div class="dimension-stars" id="pavilionStars">
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="1"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="2"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="3"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="4"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="5"></i>
+                  </div>
+                </div>
+
+                <div class="dimension-card">
+                  <div class="dimension-header">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Umpires &amp; Staff Support</span>
+                  </div>
+                  <div class="dimension-stars" id="staffStars">
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="1"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="2"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="3"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="4"></i>
+                    <i class="fa-solid fa-star dim-star-btn active" data-value="5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Captain & Match Information -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>4. Captain &amp; Squad Details <span class="req">*</span></span>
+              </label>
+
+              <div class="modal-form-grid" style="margin-bottom: 0;">
+                <div class="form-group">
+                  <label for="feedbackName">Captain / Player Name *</label>
+                  <input type="text" id="feedbackName" placeholder="e.g. Rohit Sharma" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedbackTeam">Team / Club / Corporate *</label>
+                  <input type="text" id="feedbackTeam" placeholder="e.g. Bangalore Strikers CC" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedbackRole">Your Role in the Match</label>
+                  <select id="feedbackRole">
+                    <option value="Captain" selected>Team Captain</option>
+                    <option value="Vice Captain">Vice Captain</option>
+                    <option value="Batsman">Opening / Middle Batsman</option>
+                    <option value="Bowler">Fast / Spin Bowler</option>
+                    <option value="Coach">Team Coach</option>
+                    <option value="Manager">Corporate Sports Lead</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedbackFormat">Match Format Played</label>
+                  <select id="feedbackFormat">
+                    <option value="Leather Ball 40 Overs" selected>Leather Ball (40 Overs)</option>
+                    <option value="Leather Ball T20">Leather Ball (20 Overs)</option>
+                    <option value="Box Cricket 8v8">Box Cricket Enclosed (8v8)</option>
+                    <option value="RoboArm & Practice Nets">Batting Nets / Robo Bowling Machine</option>
+                    <option value="Corporate League">Corporate Premier League</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedbackMatchDate">Date of Match</label>
+                  <input type="date" id="feedbackMatchDate">
+                </div>
+
+                <div class="form-group">
+                  <label for="feedbackBookingId">Booking Receipt ID (Optional)</label>
+                  <input type="text" id="feedbackBookingId" placeholder="e.g. CRIC-849201 (Unlocks Verified Badge)">
+                </div>
+
+                <div class="form-group form-field-full">
+                  <label for="feedbackContact">WhatsApp / Email (For 10% Voucher Delivery)</label>
+                  <input type="text" id="feedbackContact" placeholder="+91 98765 43210 or captain@team.com">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Review Title & Comments -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>5. Review Title &amp; Details <span class="req">*</span></span>
+              </label>
+
+              <div class="form-group" style="margin-bottom: 14px;">
+                <label for="feedbackTitle">Headline Summary *</label>
+                <input type="text" id="feedbackTitle" placeholder="e.g. Terrific bounce on the pitch &amp; super bright floodlights!" required>
+              </div>
+
+              <div class="form-group">
+                <label for="feedbackComments">Detailed Match Comments *</label>
+                <textarea id="feedbackComments" rows="4" placeholder="How was the turf bounce? Did the floodlights have glare? Were the dressing rooms clean? How did the umpires manage the match?" required></textarea>
+              </div>
+            </div>
+
+            <!-- Step 6: Highlight Tags Chips -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>6. Key Highlights</span>
+                <small>Select all that apply</small>
+              </label>
+
+              <div class="tag-chips-wrap">
+                <div class="tag-chip selected" data-tag="True Bounce">🏏 True Bounce</div>
+                <div class="tag-chip selected" data-tag="Even Lighting">💡 Even Lighting</div>
+                <div class="tag-chip selected" data-tag="AC Dugout">❄️ AC Dugout</div>
+                <div class="tag-chip" data-tag="Fast Turf Grip">⚡ Fast Turf Grip</div>
+                <div class="tag-chip" data-tag="CricHeroes Scoring">📱 CricHeroes Scoring</div>
+                <div class="tag-chip" data-tag="Hot Showers">🚿 Hot Showers</div>
+                <div class="tag-chip" data-tag="Bowling Machine">🤖 Bowling Machine</div>
+                <div class="tag-chip" data-tag="Certified Umpires">⚖️ Certified Umpires</div>
+                <div class="tag-chip" data-tag="YouTube Stream">📹 YouTube Stream</div>
+                <div class="tag-chip" data-tag="Ample Parking">🚗 Ample Parking</div>
+                <div class="tag-chip" data-tag="Clean Washrooms">✨ Clean Washrooms</div>
+              </div>
+            </div>
+
+            <!-- Step 7: Would you recommend? -->
+            <div class="feedback-form-group">
+              <label class="feedback-label">
+                <span>7. Would you recommend PitchArena to fellow captains?</span>
+              </label>
+
+              <div class="rec-options-row">
+                <div class="rec-btn selected" data-choice="yes">
+                  <i class="fa-solid fa-circle-check"></i> Yes, Absolutely!
+                </div>
+                <div class="rec-btn" data-choice="probably">
+                  <i class="fa-solid fa-thumbs-up"></i> Probably
+                </div>
+                <div class="rec-btn" data-choice="needs-work">
+                  <i class="fa-solid fa-wrench"></i> Needs Polish
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px 28px; font-size: 1.05rem;" id="submitFeedbackBtn">
+              <i class="fa-solid fa-paper-plane"></i> Submit Captain Review &amp; Unlock 10% Voucher
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Column: Aggregate Scorecard & Curator Pledge -->
+        <aside class="feedback-sidebar">
+          
+          <!-- Aggregate Scorecard Card -->
+          <div class="scorecard-card">
+            <div class="scorecard-header">
+              <div class="scorecard-big-number" id="scorecardAvgRating">4.9</div>
+              <div class="scorecard-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <div class="scorecard-caption" id="scorecardReviewCount">
+                Based on 1,850+ verified captain reviews
+              </div>
+            </div>
+
+            <!-- Rating breakdown bars -->
+            <div class="rating-bars-list">
+              <div class="rating-bar-row">
+                <span>5 Star</span>
+                <div class="bar-track">
+                  <div class="bar-fill" id="bar5Star" style="width: 88%;"></div>
+                </div>
+                <span class="bar-pct" id="pct5Star">88%</span>
+              </div>
+
+              <div class="rating-bar-row">
+                <span>4 Star</span>
+                <div class="bar-track">
+                  <div class="bar-fill" id="bar4Star" style="width: 9%;"></div>
+                </div>
+                <span class="bar-pct" id="pct4Star">9%</span>
+              </div>
+
+              <div class="rating-bar-row">
+                <span>3 Star</span>
+                <div class="bar-track">
+                  <div class="bar-fill" id="bar3Star" style="width: 2%;"></div>
+                </div>
+                <span class="bar-pct" id="pct3Star">2%</span>
+              </div>
+
+              <div class="rating-bar-row">
+                <span>2 Star</span>
+                <div class="bar-track">
+                  <div class="bar-fill" id="bar2Star" style="width: 1%;"></div>
+                </div>
+                <span class="bar-pct" id="pct2Star">1%</span>
+              </div>
+
+              <div class="rating-bar-row">
+                <span>1 Star</span>
+                <div class="bar-track">
+                  <div class="bar-fill" id="bar1Star" style="width: 0%;"></div>
+                </div>
+                <span class="bar-pct" id="pct1Star">0%</span>
+              </div>
+            </div>
+
+            <!-- Dimension Metrics Summary -->
+            <div class="dim-metrics-list">
+              <div class="dim-metric-item">
+                <span class="dim-metric-name"><i class="fa-solid fa-baseball-bat-ball"></i> Pitch Bounce &amp; Outfield</span>
+                <span class="dim-metric-val" id="statPitchScore">4.9 / 5.0</span>
+              </div>
+              <div class="dim-metric-item">
+                <span class="dim-metric-name"><i class="fa-solid fa-lightbulb"></i> Night Floodlight Illumination</span>
+                <span class="dim-metric-val" id="statLightsScore">4.9 / 5.0</span>
+              </div>
+              <div class="dim-metric-item">
+                <span class="dim-metric-name"><i class="fa-solid fa-shower"></i> Pavilion &amp; Washroom Hygiene</span>
+                <span class="dim-metric-val" id="statPavilionScore">4.8 / 5.0</span>
+              </div>
+              <div class="dim-metric-item">
+                <span class="dim-metric-name"><i class="fa-solid fa-user-check"></i> Umpires &amp; Staff Assistance</span>
+                <span class="dim-metric-val" id="statStaffScore">4.9 / 5.0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Curator's Commitment Pledge -->
+          <div class="curator-pledge-card">
+            <h4><i class="fa-solid fa-shield-halved"></i> 48-Hour Pitch Guarantee</h4>
+            <p>
+              Every captain review is reviewed within 24 hours by our Chief Grounds Curator. If your squad reports uneven bounce or lighting issues, our crew re-rolls the pitch or calibrates floodlight angles prior to subsequent fixtures.
+            </p>
+            <div class="curator-badge-row">
+              <div class="curator-avatar-icon">🏏</div>
+              <div>
+                <div class="curator-sign-text">Rajesh Rao</div>
+                <div class="curator-sign-sub">Head Turf Curator (BCCI Level-2 Certified)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick WhatsApp Assistance Box -->
+          <div style="background: rgba(37, 211, 102, 0.08); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: var(--radius-md); padding: 20px; text-align: center;">
+            <i class="fa-brands fa-whatsapp" style="font-size: 2rem; color: #25d366; margin-bottom: 8px;"></i>
+            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: #fff; margin-bottom: 6px;">Urgent Match Concierge?</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Have an urgent requirement for an upcoming fixture or tournament? Chat directly with the ground supervisor.
+            </p>
+            <a href="https://wa.me/919876543210?text=Hi%20PitchArena,%20I%20have%20an%20urgent%20match%20question" target="_blank" class="btn btn-outline" style="width: 100%; border-color: rgba(37, 211, 102, 0.4); color: #25d366;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Community Reviews Explorer Feed -->
+  <section class="reviews-feed-section" id="reviewsFeedSection">
+    <div class="container">
+      
+      <div class="feed-header">
+        <div class="feed-title-box">
+          <div class="section-tag" style="margin-bottom: 8px;">
+            <i class="fa-solid fa-comments"></i> Community Match Feed
+          </div>
+          <h2>Live Captain &amp; Player Reviews</h2>
+          <p>Real feedback from weekend clubs, corporate teams, coaches, and tournaments.</p>
+        </div>
+
+        <div class="feed-controls">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="reviewSearchInput" placeholder="Search by club, captain, or keyword...">
+          </div>
+
+          <select class="sort-select" id="reviewSortSelect" aria-label="Sort Reviews">
+            <option value="newest">Sort: Newest First</option>
+            <option value="highest">Sort: Highest Rating</option>
+            <option value="helpful">Sort: Most Helpful</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs-strip">
+        <button class="filter-tab active" data-filter="all">All Grounds</button>
+        <button class="filter-tab" data-filter="full">Full Stadiums (Oval &amp; Lord's)</button>
+        <button class="filter-tab" data-filter="box">ThunderBox 24/7 Turf</button>
+        <button class="filter-tab" data-filter="nets">SpeedPro Batting Nets</button>
+        <button class="filter-tab" data-filter="5star">⭐⭐⭐⭐⭐ 5-Star Only</button>
+      </div>
+
+      <!-- Reviews Masonry / Dynamic Grid -->
+      <div class="reviews-masonry-grid" id="reviewsMasonryGrid">
+        <!-- Rendered dynamically by feedback.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏏</div>
+            <div class="logo-text">Pitch<span>Arena</span></div>
+          </a>
+          <p>The premier cricket ground and sports turf booking network. World-class pitches, high-speed nets, and tournament hosting built for passionate cricketers.</p>
+          <div style="margin-top: 18px; display: flex; gap: 14px; font-size: 1.2rem; color: var(--accent-neon);">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Grounds</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#grounds">The Oval Championship</a></li>
+            <li><a href="index.html#grounds">ThunderBox 24/7 Turf</a></li>
+            <li><a href="index.html#grounds">SpeedPro Batting Nets</a></li>
+            <li><a href="index.html#grounds">Lord's Meadow Stadium</a></li>
+            <li><a href="index.html#calculator">Price Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Player Experience</h4>
+          <ul class="footer-links">
+            <li><a href="feedback.html" style="color: var(--accent-neon);">Captain Feedback &amp; Ratings</a></li>
+            <li><a href="index.html#tournaments">Corporate Cricket Leagues</a></li>
+            <li><a href="index.html#amenities">Night Floodlight Matches</a></li>
+            <li><a href="index.html#amenities">4K YouTube Streaming</a></li>
+            <li><a href="index.html#faq">Rain Guarantee Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Venue &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-neon); margin-right: 6px;"></i> Stadium Boulevard, Sports City</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-neon); margin-right: 6px;"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-neon); margin-right: 6px;"></i> feedback@pitcharena.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-neon); margin-right: 6px;"></i> Open 24 Hours / 7 Days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PitchArena Sports Hub. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Ground Rental</a>
+          <a href="#">Rain Guarantee Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Pill -->
+  <a href="https://wa.me/919876543210?text=Hi%20PitchArena,%20I%20want%20to%20share%20ground%20feedback" target="_blank" class="floating-contact-btn" id="floatingWhatsapp">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span>Instant WhatsApp Chat</span>
+  </a>
+
+  <!-- ==========================================================================
+       Reward / Voucher Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="rewardModal" onclick="handleBackdropClick(event, 'rewardModal')">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">🎉 Review Submitted!</h3>
+        <button class="modal-close-btn" onclick="closeModal('rewardModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="success-screen" style="padding: 10px 0;">
+          <div class="success-check-icon">✓</div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); margin-bottom: 6px;">
+            Thank You Captain!
+          </h3>
+          <p id="rewardCaptainGreeting" style="color: var(--accent-neon); font-weight: 700; font-size: 1rem; margin-bottom: 8px;">
+            Your review is now live on our community feed.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 440px; margin: 0 auto;">
+            Our curation squad appreciates your detailed match ratings. Here is your exclusive 10% discount promo code for your next booking:
+          </p>
+
+          <div class="reward-voucher-box">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px;">
+              🎁 Squad Reward Promo Code
+            </span>
+            <div class="voucher-code-display">
+              <span class="voucher-code-text" id="promoCodeText">PITCH10-CAPTAIN</span>
+              <button class="copy-voucher-btn" id="copyVoucherBtn" onclick="copyVoucherCode()">
+                <i class="fa-solid fa-copy"></i> Copy Code
+              </button>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">
+              Valid on all slot bookings (Weekend &amp; Weekday) for 60 days.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-direction: column; margin-top: 20px;">
+            <a href="index.html#grounds" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-calendar-check"></i> Book Your Next Match Slot
+            </a>
+            <button class="btn btn-outline" onclick="closeModal('rewardModal')">
+              View Your Published Review
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Script Logic -->
+  <script src="feedback.js"></script>
+</body>
+</html>
