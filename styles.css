@@ -1684,6 +1684,32 @@ input, select, textarea {
   .form-field-full {
     grid-column: span 1;
   }
+  .grounds-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .filter-tabs {
+    gap: 8px;
+  }
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  .feed-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+  .search-box {
+    width: 100%;
+    min-width: 0;
+  }
+  .sort-select {
+    width: 100%;
+  }
+  .stat-pill {
+    font-size: 0.82rem;
+    padding: 8px 14px;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -1691,6 +1717,37 @@ input, select, textarea {
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero-headline,
+  .feedback-hero-headline {
+    font-size: 2rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+  .floating-contact-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+  }
+  .toast {
+    width: 100%;
   }
 }
 
